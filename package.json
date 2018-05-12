@@ -2,7 +2,6 @@
   "name": "graphql-postgres",
   "version": "1.0.0",
   "scripts": {
-    "db": "babel --presets es2015 db.js -o .compiled/main.bundle.js"
   },
   "main": "index.js",
   "repository": "https://github.com/f7g/graphql-postgres.git",
