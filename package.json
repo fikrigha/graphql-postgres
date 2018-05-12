@@ -1,0 +1,23 @@
+{
+  "name": "graphql-postgres",
+  "version": "1.0.0",
+  "scripts": {
+    "db": "babel --presets es2015 db.js -o .compiled/main.bundle.js"
+  },
+  "main": "index.js",
+  "repository": "https://github.com/f7g/graphql-postgres.git",
+  "author": "Fikri Ghazi",
+  "license": "MIT",
+  "dependencies": {
+    "faker": "^4.1.0",
+    "lodash": "^4.17.10",
+    "pg": "^7.4.3",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.37.7"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1"
+  }
+}
