@@ -57,13 +57,37 @@ const Query = new GraphQLObjectType({
         type: new GraphQLList(Post),
         resolve: (root, args) => Models.post.findAll({ where: args }),
       }
-    };
+    }; 
   }
+});
+
+
+const Mutation = new GraphQLObjectType({
+  name: 'Mutation',
+  description: 'This is similar to POST in a REST api',
+  fields: () => ({
+    addPerson: {
+      type: Person,
+      args: {
+        firstName: { type: new GraphQLNonNull(GraphQLString) },
+        lastName: { type: new GraphQLNonNull(GraphQLString) },
+        email: { type: new GraphQLNonNull(GraphQLString) },
+      },
+      resolve: (_, args) => {
+        return Models.person.create({
+          firstName: args.firstName,
+          lastName: args.lastName,
+          email: args.email.toLowerCase(),
+        });
+      },
+    }
+  }),
 });
 
 
 const Schema = new GraphQLSchema({
   query: Query, // Root query
+  mutation: Mutation,
 });
 
 
